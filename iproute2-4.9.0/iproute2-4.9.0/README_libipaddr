@@ -13,6 +13,6 @@ a.修改ip/makefile 中target 只要ip即可
 4.使用的时候把ipaddr.h跟libipaddr.a拷到项目中即可
 由于libipaddr.a 还要依赖于../../lib/libnetlink.a ../../lib/libutil.a -ldl
 所以使用时要把这三个也链接上 当然也可以把libnetlink.a libutil.a libipaddr归档为一个静态库
-
+libnetlink.a libutil.a在根目录的iproute2-4.9.0/lib 下会生成有
 5.test目录下有使用例子
 ps:test编译:gcc test.c -o test libipaddr.a ../../lib/libnetlink.a ../../lib/libutil.a -ldl
