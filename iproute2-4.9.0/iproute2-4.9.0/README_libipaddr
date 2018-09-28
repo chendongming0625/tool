@@ -1,0 +1,18 @@
+libipaddr.a 
+功能:目前只提供了ip addr 增加/删除ip接口
+
+使用libipaddr.a库步骤：
+1.编译
+a.修改ip/makefile 中target 只要ip即可
+在iproute2-4.9.0 目录下执行make
+会提示找不到入口函数main 属于正常现象 因为ip.c中屏蔽了main
+2.cd ./ip
+
+3.ar crv libipaddr.a *.o 当前目录下会生成libipaddr.a
+
+4.使用的时候把ipaddr.h跟libipaddr.a拷到项目中即可
+由于libipaddr.a 还要依赖于../../lib/libnetlink.a ../../lib/libutil.a -ldl
+所以使用时要把这三个也链接上 当然也可以把libnetlink.a libutil.a libipaddr归档为一个静态库
+
+5.test目录下有使用例子
+ps:test编译:gcc test.c -o test libipaddr.a ../../lib/libnetlink.a ../../lib/libutil.a -ldl
