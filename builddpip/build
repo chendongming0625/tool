@@ -1,0 +1,4 @@
+gcc -c *.c -D DPVS_MAX_LCORE=64 -I./cel/include 
+ar crv libdpip.a *.o
+rm -f *.o
+#gcc -o dpip admin main.c -L./ -lipvsadmin 
