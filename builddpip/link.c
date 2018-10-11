@@ -24,6 +24,9 @@
 #include "dpip.h"
 #include "conf/netif.h"
 #include "sockopt.h"
+#include "./test/ifconfig.h"
+#include "./conf/inetaddr.h"
+
 
 #define LINK_DEV_NAME_MAXLEN    32
 #define LINK_ARG_ITEM_MAXLEN    256
@@ -1145,6 +1148,115 @@ static int link_set(struct link_param *param)
     return EDPVS_OK;
 }
 
+int get_dpdk_interface_list(CelArrayList*arr)
+{
+	int ii,jj, ret,err;
+	/* show infomation of all NIC */
+	if (get_netif_port_list() < 0)
+		return EDPVS_INVAL;
+	ret = EDPVS_OK;
+
+//get ip(./dpip addr show)
+	size_t size;
+	struct inet_addr_param param;
+	memset(&param, 0, sizeof(struct inet_addr_param));
+	struct inet_addr_param_array *array;
+	param.plen = 32;
+	param.af = AF_INET;
+	param.scope = IFA_SCOPE_GLOBAL;
+	err = dpvs_getsockopt(SOCKOPT_GET_IFADDR_SHOW, &param, sizeof(param),
+		(void **)&array, &size);
+	if (err != 0)
+		return err;
+
+	if (size < sizeof(*array)
+		|| size != sizeof(*array) + \
+		array->naddr * sizeof(struct inet_addr_param)) {
+		printf("corrupted response.\n");
+		dpvs_sockopt_msg_free(array);
+		return EDPVS_INVAL;
+	}
+	for (ii = 0; ii < g_nic_list->nic_num && ii < NETIF_MAX_PORTS; ii++)
+	{
+		size_t len = 0;
+		size_t ip_num = 0;
+		netif_nic_basic_get_t get, *p_get = NULL;
+
+		InterFaceInfo*info = (InterFaceInfo*)malloc(sizeof(InterFaceInfo));
+		info->ip_num = 0;
+		snprintf(info->name, sizeof(info->name),
+			"%s", g_nic_list->idname[ii].name);
+
+//获取同一网卡ip数量
+		for (jj = 0; jj < array->naddr; jj++)
+		{
+			if (!strncmp(array->addrs[jj].ifname,
+				info->name, strlen(info->name)))
+				ip_num++;
+		}
+//get ip
+		if (ip_num != 0)
+		{
+			info->ip = malloc(sizeof(char*)*ip_num);
+			for (jj = 0; jj < array->naddr; jj++)
+			{
+				char addr[32] = { 0 };
+				if (!strncmp(array->addrs[jj].ifname, 
+					info->name, strlen(info->name)))
+				{
+					info->ip[info->ip_num] = (char*)malloc(32);
+					snprintf(info->ip[info->ip_num++], sizeof(addr),
+						inet_ntop(array->addrs[jj].af, &array->addrs[jj].addr,
+							addr, sizeof(addr)) ? addr : " ");
+				}
+			}
+		}
+		
+//start get interface_info:
+		err = dpvs_getsockopt(SOCKOPT_NETIF_GET_PORT_BASIC,
+			info->name, sizeof(info->name),(void **)&p_get, &len);
+
+		if (err != EDPVS_OK || !p_get || !len)
+		{
+			for (jj = 0; jj < info->ip_num; jj++)
+			{
+				if (info->ip[jj])
+				{
+					free(info->ip[jj]);
+					info->ip[jj] = NULL;
+				}
+					
+			}
+			if (info->ip)
+			{
+				free(info->ip);
+				info->ip = NULL;
+			}
+			if (info)
+			{
+				free(info);
+				info = NULL;
+			}	
+			dpvs_sockopt_msg_free(array);
+			return err;
+		}	
+		get = *p_get;
+		dpvs_sockopt_msg_free(p_get);
+
+//get status
+		if (get.link_status[0])
+			memcpy(info->status,get.link_status,sizeof(info->status));
+//get speed
+		snprintf(info->speed,sizeof(info->speed),
+			"%dMb/s ", get.link_speed);
+//get mac
+		memcpy(info->mac, get.addr,sizeof(info->mac));
+
+		cel_arraylist_push_back(arr,info);
+	}
+	dpvs_sockopt_msg_free(array);
+	return ret;
+}
 static int link_do_cmd(struct dpip_obj *obj, dpip_cmd_t cmd,
                        struct dpip_conf *conf)
 {

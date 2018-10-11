@@ -1,0 +1,19 @@
+dpip 部分源码分析：
+./dpip addr add 192.168.19.2/24 dev dpdk0此命令执行过程
+main->parse_args()解析参数到conf中  得到conf->obj=addr conf->cmd=DPIP_CMD_ADD 并且剩余参数
+(192.168.19.2/24 dev dpdk0也传给conf中)
+->dpip_obj_get(addr)从链表里面找名为addr的obj返回->得到对象obj
+(得到一个函数指针do_cmd指向addr_do_cmd())->执行addr_do_cmd(obj,conf.cmd,&conf)
+-> 然后执行addr_parse_args()把参数(192.168.19.2/24 dev dpdk0)解析到(struct inet_addr_param类型)param结构体中
+switch (conf->cmd) 
+    case DPIP_CMD_ADD:
+        return dpvs_setsockopt(SOCKOPT_SET_IFADDR_ADD, &param, sizeof(param));
+		
+2 ./dpip route add 10.21.21.227/32 via 192.168.23.1 dev dpdk1 添加路由命令执行过程
+main->parse_args()解析参数到conf中  得到conf->obj=route conf->cmd=DPIP_CMD_ADD 并且剩余参数
+(10.21.21.227/32 via 192.168.23.1 dev dpdk1也传给conf中)
+->dpip_obj_get(route)从链表里面找名为route的obj返回->得到对象obj
+(得到一个函数指针do_cmd指向route_do_cmd())->执行route_do_cmd(obj,conf.cmd,&conf)
+switch (conf->cmd) 
+    case DPIP_CMD_ADD:
+        return dpvs_setsockopt(SOCKOPT_SET_ROUTE_ADD, &param, sizeof(param));

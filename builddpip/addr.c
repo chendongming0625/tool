@@ -198,7 +198,6 @@ static int addr_parse_args(struct dpip_conf *conf,
 
     if (conf->verbose)
         addr_dump(param);
-	printf("end..\n");
     return 0;
 }
 //此接口包含dpip删除/增加ip
@@ -207,20 +206,46 @@ static int addr_parse_args(struct dpip_conf *conf,
 int addr_do(int argc,char **argv,int cmd)
 {
 	struct dpip_conf conf;
+	int err, i;
+	size_t size;
+	struct inet_addr_param param;
+	struct inet_addr_param_array *array;
 	conf.af = AF_INET;
 	conf.argc = argc;
 	conf.argv = argv;
 	conf.cmd = cmd;
 	conf.obj = "addr";
-	struct inet_addr_param param;
 	if (addr_parse_args(&conf, &param) != 0)
 		return EDPVS_INVAL;
+
+
 	switch (cmd) 
 	{
 	case DPIP_CMD_ADD:
 		return dpvs_setsockopt(SOCKOPT_SET_IFADDR_ADD, &param, sizeof(param));
 	case DPIP_CMD_DEL:
 		return dpvs_setsockopt(SOCKOPT_SET_IFADDR_DEL, &param, sizeof(param));
+
+	case DPIP_CMD_SHOW:
+		 err = dpvs_getsockopt(SOCKOPT_GET_IFADDR_SHOW, &param, sizeof(param),
+			(void **)&array, &size);
+		if (err != 0)
+			return err;
+
+		if (size < sizeof(*array)
+			|| size != sizeof(*array) + \
+			array->naddr * sizeof(struct inet_addr_param)) {
+			fprintf(stderr, "corrupted response.\n");
+			dpvs_sockopt_msg_free(array);
+			return EDPVS_INVAL;
+		}
+		printf("array->naddr size=%d\n", array->naddr);
+		for (i = 0; i < array->naddr; i++)
+			addr_dump(&array->addrs[i]);//打印屏幕
+
+		dpvs_sockopt_msg_free(array);
+		return EDPVS_OK;
+
 	}
 	return 0;
 }
