@@ -4,7 +4,7 @@ libipaddr.a
 使用libipaddr.a库步骤：
 1.编译
 a.修改ip/makefile 中target 只要ip即可
-在iproute2-4.9.0 目录下执行make
+b.在iproute2-4.9.0 目录下执行make
 会提示找不到入口函数main 属于正常现象 因为ip.c中屏蔽了main
 2.cd ./ip
 
