@@ -13,5 +13,286 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\ip">
+      <UniqueIdentifier>{2f2a6a75-f28d-4ead-b781-83aef5bf0a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ip\test">
+      <UniqueIdentifier>{03673f67-3f9c-465f-9d2e-f983a4e6cc19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lib">
+      <UniqueIdentifier>{63e7c3cd-f10d-44b9-8efb-84e6621d3ba2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\test\ipaddr.h">
+      <Filter>源文件\ip\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\ip_common.h">
+      <Filter>源文件\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\ipaddr.h">
+      <Filter>源文件\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\iproute_lwtunnel.h">
+      <Filter>源文件\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\tunnel.h">
+      <Filter>源文件\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\xfrm.h">
+      <Filter>源文件\ip</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\test\test.c">
+      <Filter>源文件\ip\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ip.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ip6tunnel.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipaddress.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipaddrlabel.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipfou.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipila.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipl2tp.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bond.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bond_slave.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bridge.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bridge_slave.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_can.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_geneve.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_hsr.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_ipoib.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_ipvlan.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_macvlan.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_vlan.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_vrf.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_vxlan.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmacsec.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmaddr.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmonitor.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmroute.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipneigh.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipnetconf.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipnetns.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipntable.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipprefix.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iproute.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iproute_lwtunnel.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iprule.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iptoken.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iptunnel.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iptuntap.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipxfrm.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_gre.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_gre6.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_ip6tnl.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_iptnl.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_veth.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_vti.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_vti6.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\rtm_map.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\rtmon.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\static-syms.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\tcp_metrics.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\tunnel.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\xfrm_monitor.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\xfrm_policy.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\xfrm_state.c">
+      <Filter>源文件\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\color.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\coverity_model.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\dnet_ntop.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\dnet_pton.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\inet_proto.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ipx_ntop.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ipx_pton.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\json_writer.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\libgenl.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\libnetlink.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_addr.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_map.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_proto.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_types.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\mpls_ntop.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\mpls_pton.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\names.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\namespace.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\rt_names.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\utils.c">
+      <Filter>源文件\lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\iproute2-4.9.0\ip\libipaddr.a">
+      <Filter>源文件\ip</Filter>
+    </Library>
+    <Library Include="..\..\iproute2-4.9.0\lib\libnetlink.a">
+      <Filter>源文件\lib</Filter>
+    </Library>
+    <Library Include="..\..\iproute2-4.9.0\lib\libutil.a">
+      <Filter>源文件\lib</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\iproute2-4.9.0\ip\Makefile">
+      <Filter>源文件\ip</Filter>
+    </None>
+    <None Include="..\..\iproute2-4.9.0\ip\routef">
+      <Filter>源文件\ip</Filter>
+    </None>
+    <None Include="..\..\iproute2-4.9.0\ip\routel">
+      <Filter>源文件\ip</Filter>
+    </None>
+    <None Include="..\..\iproute2-4.9.0\ip\rtmon">
+      <Filter>源文件\ip</Filter>
+    </None>
+    <None Include="..\..\iproute2-4.9.0\ip\rtpr">
+      <Filter>源文件\ip</Filter>
+    </None>
+    <None Include="..\..\iproute2-4.9.0\lib\Makefile">
+      <Filter>源文件\lib</Filter>
+    </None>
   </ItemGroup>
 </Project>
