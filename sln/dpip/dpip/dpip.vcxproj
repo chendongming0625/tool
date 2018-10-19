@@ -74,6 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\study\share\work\tool\builddpip\cel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -110,6 +111,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\builddpip\addr.c" />
+    <ClCompile Include="..\..\..\builddpip\cls.c" />
+    <ClCompile Include="..\..\..\builddpip\common.c" />
+    <ClCompile Include="..\..\..\builddpip\dpip.c" />
+    <ClCompile Include="..\..\..\builddpip\link.c" />
+    <ClCompile Include="..\..\..\builddpip\neigh.c" />
+    <ClCompile Include="..\..\..\builddpip\qsch.c" />
+    <ClCompile Include="..\..\..\builddpip\route.c" />
+    <ClCompile Include="..\..\..\builddpip\sockopt.c" />
+    <ClCompile Include="..\..\..\builddpip\test\main.cpp" />
+    <ClCompile Include="..\..\..\builddpip\tunnel.c" />
+    <ClCompile Include="..\..\..\builddpip\utils.c" />
+    <ClCompile Include="..\..\..\builddpip\vlan.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\builddpip\common.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\blklst.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\conn.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\inet.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\inetaddr.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\laddr.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\neigh.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\netif.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\route.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\tc.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\tc\cls.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\tc\sch.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\tc\tc.h" />
+    <ClInclude Include="..\..\..\builddpip\conf\vlan.h" />
+    <ClInclude Include="..\..\..\builddpip\dpip.h" />
+    <ClInclude Include="..\..\..\builddpip\inet.h" />
+    <ClInclude Include="..\..\..\builddpip\ip_tunnel.h" />
+    <ClInclude Include="..\..\..\builddpip\list.h" />
+    <ClInclude Include="..\..\..\builddpip\match.h" />
+    <ClInclude Include="..\..\..\builddpip\sockopt.h" />
+    <ClInclude Include="..\..\..\builddpip\test\dpipdo.h" />
+    <ClInclude Include="..\..\..\builddpip\test\ifconfig.h" />
+    <ClInclude Include="..\..\..\builddpip\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\builddpip\test\build" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

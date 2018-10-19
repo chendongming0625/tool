@@ -13,5 +13,131 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\test">
+      <UniqueIdentifier>{a2612d22-e243-4ff1-9165-9ed0d5d0dae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\conf">
+      <UniqueIdentifier>{473e3493-f821-4f71-a723-75db1cb4c44d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\conf\tc">
+      <UniqueIdentifier>{a2a5c198-4392-41c0-a93f-0c166f2ea984}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\builddpip\addr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\cls.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\common.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\dpip.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\link.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\neigh.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\qsch.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\route.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\sockopt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\tunnel.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\utils.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\vlan.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\builddpip\test\main.cpp">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\builddpip\common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\dpip.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\inet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\ip_tunnel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\match.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\sockopt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\test\dpipdo.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\test\ifconfig.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\blklst.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\conn.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\inet.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\inetaddr.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\laddr.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\neigh.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\netif.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\route.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\tc.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\vlan.h">
+      <Filter>源文件\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\tc\cls.h">
+      <Filter>源文件\conf\tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\tc\sch.h">
+      <Filter>源文件\conf\tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\builddpip\conf\tc\tc.h">
+      <Filter>源文件\conf\tc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\builddpip\test\build">
+      <Filter>源文件\test</Filter>
+    </None>
   </ItemGroup>
 </Project>

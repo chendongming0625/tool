@@ -24,7 +24,7 @@
 #include "test/dpipdo.h"
 #include "conf/route.h"
 #include "sockopt.h"
-
+#include <uuid/uuid.h>
 static void route_help(void)
 {
     fprintf(stderr, 
@@ -261,6 +261,51 @@ static int route_parse_args(struct dpip_conf *conf,
 
     return 0;
 }
+//////////////////////////////////////////////////////////start////////////////////////////////////////////////////////////////////////////
+/*@author:cdm
+@Date:2018.10.16
+
+*/
+static int get_uuid(char * uuid)
+{
+	if (uuid == NULL)
+		return -1;
+	else
+	{
+		uuid_t id;
+		uuid_generate(id);
+		uuid_unparse(id, uuid);
+		return 0;
+	}
+}
+static char*netmask_len2str(int mask_len, char*mask_str)
+{
+	int i, i_mask;
+	for (i = 1, i_mask = 1; i < mask_len; i++)
+		i_mask = (i_mask<<1)|1;
+	i_mask = htonl(i_mask<<(32-mask_len));
+	strcpy(mask_str,inet_ntoa(*(struct in_addr*)&i_mask));
+
+	return mask_str;
+}
+static char*get_route_flags(int mask_len,char*gateway_addr,char *flags)
+{
+	if (mask_len == 32)
+	{
+		if (!strcmp(gateway_addr, "0.0.0.0"))
+			memcpy(flags, "UH", sizeof("UH"));
+		else
+			memcpy(flags,"UGH",sizeof("UGH"));
+	}
+	else
+	{
+		if (!strcmp(gateway_addr, "0.0.0.0"))
+			memcpy(flags, "U", sizeof("U"));
+		else
+			memcpy(flags,"UG",sizeof("UG"));
+	}
+	return flags;
+}
 //dpip 添加/删除路由
 //传参格式如下
 //char *argv[]={ip,"dev","via","192.168.23.1","dev","dpdk1"};
@@ -290,6 +335,8 @@ int route_do(int argc, char**argv, int cmd, CelArrayList*arr)
 		return dpvs_setsockopt(SOCKOPT_SET_ROUTE_DEL, &route, sizeof(route));
 
 	case DPIP_CMD_SHOW:
+		if (arr == NULL)
+			return -1;
 		err = dpvs_getsockopt(SOCKOPT_GET_ROUTE_SHOW, NULL, 0,
 			(void **)&array, &size);
 		if (err != 0)
@@ -309,24 +356,22 @@ int route_do(int argc, char**argv, int cmd, CelArrayList*arr)
 			memset(via, 0, sizeof(via));
 			memset(src,0,sizeof(src));
 			struct dpip_route *_route = (struct dpip_route *)malloc(sizeof(struct dpip_route));
-			snprintf(_route->af, sizeof(_route->af),"%s", af_itoa(array->routes[i].af));
-			snprintf(_route->dst,sizeof(_route->dst),"%s/%d",
+			memset(_route,0,sizeof(struct dpip_route));
+			get_uuid(_route->id);
+			snprintf(_route->dst,sizeof(_route->dst),"%s",
 				inet_ntop(array->routes[i].af, &(array->routes[i]).dst,
-					dst, sizeof(dst)) ? dst : "::", array->routes[i].plen);
-			snprintf(_route->via,sizeof(_route->via),"%s",
+					dst, sizeof(dst)) ? dst : " ");
+			netmask_len2str(array->routes[i].plen,_route->netmask);
+			snprintf(_route->gateway_addr,sizeof(_route->gateway_addr),"%s",
 				inet_ntop(array->routes[i].af, 
-					&(array->routes[i]).via, via, sizeof(via)) ? via : "::");
+					&(array->routes[i]).via, via, sizeof(via)) ? via : " ");
 			snprintf(_route->src,sizeof(_route->src),
 				inet_ntop(array->routes[i].af,
-					&(array->routes[i]).src, src, sizeof(src)) ? src : "::");
+					&(array->routes[i]).src, src, sizeof(src)) ? src : " ");
 			
 			memcpy(_route->ifname, array->routes[i].ifname,sizeof(_route->ifname));
-			_route->mtu = array->routes[i].mtu;
-			_route->tos = array->routes[i].tos;
-			_route->scope = array->routes[i].scope;
+			get_route_flags(array->routes[i].plen, _route->gateway_addr,_route->flags);
 			_route->metric = array->routes[i].metric;
-			_route->proto = array->routes[i].proto;
-			_route->flags = array->routes[i].flags;
 			cel_arraylist_push_back(arr,_route);
 		}
 		
@@ -335,7 +380,7 @@ int route_do(int argc, char**argv, int cmd, CelArrayList*arr)
 	}
 	return EDPVS_INVAL;
 }
-
+/////////////////////////////////////////////////////////////end//////////////////////////////////////////////////////////////////////
 static int route_do_cmd(struct dpip_obj *obj, dpip_cmd_t cmd,
                         struct dpip_conf *conf)
 {

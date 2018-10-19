@@ -3,53 +3,23 @@
 
 #include "cel/arraylist.h"
 #include "ifconfig.h"
-#define DPIP_ADD 	0
-#define DPIP_DEL	1
-#define DPIP_SHOW   	3
-
+#define DPIP_ADD 		0
+#define DPIP_DEL		1
+#define DPIP_SHOW		3
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 struct dpip_route {
-	char             af[16];
-	char			 dst[64];    /* all-zero for default */
-	char			 via[64];
-	char			 src[64];
+	char			id[64];
+	char			 dst[32];    /* all-zero for default */
+	char			 gateway_addr[32];
+	char			 src[32];
 	char            ifname[32];
-	unsigned int    mtu;
-	unsigned char   tos;
-	unsigned char   scope;
+	char			netmask[32];
+	char			flags[8];
 	unsigned char   metric;
-	unsigned char   proto;  /* routing protocol */
-	unsigned char   flags;
 };
-
-void free_interface_list_fun(void * p)
-{
-	struct _InterFaceInfo*info = (struct _InterFaceInfo*)p;
-	int i;
-	for (i = 0; i<info->ip_num; i++)
-	{
-		if (info->ip[i])
-		{
-			free(info->ip[i]);
-			info->ip[i] = NULL;
-		}
-	}
-	info->ip_num = 0;
-	if (info->ip)
-	{
-		free(info->ip);
-		info->ip = NULL;
-	}
-	if (info)
-	{
-		free(info);
-		info = NULL;
-	}
-	return;
-}
 
 /*功能:获取dpdk虚拟网卡列表
 @param:arr 列表(new时须设置回调free_interface_list_fun())

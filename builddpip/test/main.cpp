@@ -5,17 +5,43 @@
 
 int foreach_route_list_cb(void * value, void * user_data)
 {
-	printf("foreach_route_list_cb...\n");
+	//printf("foreach_route_list_cb...\n");
 	struct dpip_route*list = (struct dpip_route*)value;
 	if (list)
-		printf(":%s,dev %s\n", list->dst, list->ifname);
-	if (strncmp("192.168.20.2/32", list->dst, sizeof("192.168.20.2/32")))
+		printf(":%s,gate:%s src:%s dev %s,flag:%s,netmask:%s,metric:%d\n", 
+			list->dst,list->gateway_addr,list->src, list->ifname,list->flags,list->netmask,list->metric);
+	/*if (strncmp("192.168.20.2/32", list->dst, sizeof("192.168.20.2/32")))
 	{
 		*((bool*)user_data) = true;
-	}
+	}*/
 	return 0;
 }
 
+void free_interface_list(void * p)
+{
+	struct _InterFaceInfo*info = (struct _InterFaceInfo*)p;
+	int i;
+	for (i = 0; i<info->ip_num; i++)
+	{
+		if (info->ip[i])
+		{
+			free(info->ip[i]);
+			info->ip[i] = NULL;
+		}
+	}
+	info->ip_num = 0;
+	if (info->ip)
+	{
+		free(info->ip);
+		info->ip = NULL;
+	}
+	if (info)
+	{
+		free(info);
+		info = NULL;
+	}
+	return;
+}
 void freefun(void*p)
 {
 	if (p)
@@ -67,16 +93,26 @@ void interface_list_free(void*p)
 }
 int dpdk_interface_test()
 {
-	CelArrayList*list = cel_arraylist_new(free_interface_list_fun);
+	CelArrayList*list = cel_arraylist_new(free_interface_list);
 	int ret=get_dpdk_interface_list(list);
 	printf("ret=%d\n",ret);
 	cel_arraylist_foreach(list,(CelEachFunc)foreach_dpdk_list_cb,NULL);
 	cel_arraylist_free(list);
 }
 
+int dpip_route_test()
+{
+	CelArrayList*list = cel_arraylist_new(freefun);
+	route_do(0,NULL,DPIP_SHOW,list);
+	cel_arraylist_foreach(list, foreach_route_list_cb, NULL);
+	return 0;
+}
+
+
 int main(int argc,char **argv)
 {
-	dpdk_interface_test();
+	dpip_route_test();
+	//dpdk_interface_test();
 	// int i;
 	// char ip[]="10.21.21.227/32";
 	// CelArrayList*list = cel_arraylist_new(freefun);

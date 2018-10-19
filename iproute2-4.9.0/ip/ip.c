@@ -34,7 +34,7 @@ int resolve_hosts;
 int oneline;
 int brief;
 int timestamp;
-const char *_SL_;
+const char *_SL_="\n";
 int force;
 int max_flush_loops = 10;
 int batch_mode;

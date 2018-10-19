@@ -1147,7 +1147,11 @@ static int link_set(struct link_param *param)
     }
     return EDPVS_OK;
 }
-
+////////////////////////////////////////////////////////////////////start//////////////////////////////////////////////////////////////////////////
+/*author:cdm
+@function:get dpdk interface info
+@date:2018.10.10
+*/
 int get_dpdk_interface_list(CelArrayList*arr)
 {
 	int ii,jj, ret,err;
@@ -1184,6 +1188,7 @@ int get_dpdk_interface_list(CelArrayList*arr)
 
 		InterFaceInfo*info = (InterFaceInfo*)malloc(sizeof(InterFaceInfo));
 		info->ip_num = 0;
+		info->ip = NULL;
 		snprintf(info->name, sizeof(info->name),
 			"%s", g_nic_list->idname[ii].name);
 
@@ -1257,6 +1262,7 @@ int get_dpdk_interface_list(CelArrayList*arr)
 	dpvs_sockopt_msg_free(array);
 	return ret;
 }
+////////////////////////////////////////////////////////////////////end//////////////////////////////////////////////////////////////////////////
 static int link_do_cmd(struct dpip_obj *obj, dpip_cmd_t cmd,
                        struct dpip_conf *conf)
 {

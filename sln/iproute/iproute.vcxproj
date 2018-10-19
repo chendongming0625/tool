@@ -18,6 +18,102 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\ipaddr.h" />
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\iproute_lwtunnel.h" />
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\ip_common.h" />
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\test\ipaddr.h" />
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\tunnel.h" />
+    <ClInclude Include="..\..\iproute2-4.9.0\ip\xfrm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ip.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ip6tunnel.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipaddress.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipaddrlabel.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipfou.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipila.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipl2tp.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bond.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bond_slave.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bridge.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_bridge_slave.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_can.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_geneve.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_hsr.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_ipoib.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_ipvlan.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_macvlan.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_vlan.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_vrf.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iplink_vxlan.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmacsec.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmaddr.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmonitor.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipmroute.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipneigh.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipnetconf.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipnetns.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipntable.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipprefix.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iproute.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iproute_lwtunnel.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iprule.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iptoken.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iptunnel.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\iptuntap.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\ipxfrm.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_gre.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_gre6.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_ip6tnl.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_iptnl.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_veth.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_vti.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\link_vti6.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\rtmon.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\rtm_map.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\static-syms.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\tcp_metrics.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\test\test.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\tunnel.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\xfrm_monitor.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\xfrm_policy.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\ip\xfrm_state.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\color.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\coverity_model.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\dnet_ntop.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\dnet_pton.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\inet_proto.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ipx_ntop.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ipx_pton.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\json_writer.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\libgenl.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\libnetlink.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_addr.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_map.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_proto.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\ll_types.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\mpls_ntop.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\mpls_pton.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\names.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\namespace.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\rt_names.c" />
+    <ClCompile Include="..\..\iproute2-4.9.0\lib\utils.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\iproute2-4.9.0\ip\libipaddr.a" />
+    <Library Include="..\..\iproute2-4.9.0\lib\libnetlink.a" />
+    <Library Include="..\..\iproute2-4.9.0\lib\libutil.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\iproute2-4.9.0\ip\Makefile" />
+    <None Include="..\..\iproute2-4.9.0\ip\routef" />
+    <None Include="..\..\iproute2-4.9.0\ip\routel" />
+    <None Include="..\..\iproute2-4.9.0\ip\rtmon" />
+    <None Include="..\..\iproute2-4.9.0\ip\rtpr" />
+    <None Include="..\..\iproute2-4.9.0\lib\Makefile" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9D8E848F-F82A-4C39-8BE6-F257DF35A5DC}</ProjectGuid>
     <RootNamespace>iproute</RootNamespace>
@@ -74,6 +170,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\study\share\work\tool\iproute2-4.9.0\cel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,8 +206,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
