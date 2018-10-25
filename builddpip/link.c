@@ -28,6 +28,7 @@
 #include "./conf/inetaddr.h"
 
 
+
 #define LINK_DEV_NAME_MAXLEN    32
 #define LINK_ARG_ITEM_MAXLEN    256
 #define LINK_ARG_VALUE_MAXLEN   256

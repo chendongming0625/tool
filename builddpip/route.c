@@ -24,6 +24,7 @@
 #include "test/dpipdo.h"
 #include "conf/route.h"
 #include "sockopt.h"
+//by cdm
 #include <uuid/uuid.h>
 static void route_help(void)
 {
@@ -167,7 +168,6 @@ static int route_parse_args(struct dpip_conf *conf,
                 route->scope = atoi(conf->argv[0]);
         } else if (strcmp(conf->argv[0], "src") == 0) {
             NEXTARG_CHECK(conf, "src");
-			printf("src=%s\n",conf->argv[0]);
             if (inet_pton_try(&route->af, conf->argv[0], &route->src) <= 0)
                 return -1;
         } else if (strcmp(conf->argv[0], "metric") == 0) {
@@ -355,8 +355,8 @@ int route_do(int argc, char**argv, int cmd, CelArrayList*arr)
 			memset(dst, 0, sizeof(dst));
 			memset(via, 0, sizeof(via));
 			memset(src,0,sizeof(src));
-			struct dpip_route *_route = (struct dpip_route *)malloc(sizeof(struct dpip_route));
-			memset(_route,0,sizeof(struct dpip_route));
+			struct _RouteInfo *_route = (struct _RouteInfo *)malloc(sizeof(struct _RouteInfo));
+			memset(_route,0,sizeof(struct _RouteInfo));
 			get_uuid(_route->id);
 			snprintf(_route->dst,sizeof(_route->dst),"%s",
 				inet_ntop(array->routes[i].af, &(array->routes[i]).dst,
