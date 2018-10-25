@@ -1,0 +1,19 @@
+************************************************************************
+by  chendongming：
+compile step:
+cd net-tools-code
+make #一直按回车 会生成默认配置
+当前目录就会生成ifconfig 这些文件
+
+
+把当前目录下的ifconfig.o 拷贝到lib目录下，删除原来的静态库libnet_tool.a
+把当前目录下的route.o 拷贝到lib目录下，删除原来的静态库libnet_tool.a
+重新用ar crv libnet_tool.a *.o 则会把ifconfig中的接口封装进库里面
+route中封装接口也是同理
+*************************************************************************
+说明:
+本库是基于开源的net-tools源码封装出接口给项目中使用
+1.获取系统路由列表接口----route -n
+2.添加/删除系统路由 ----route add/del
+3.获取系统网卡列表信息接口 ----ifconfig(只支持单个ip)
+使用例子请看test目录

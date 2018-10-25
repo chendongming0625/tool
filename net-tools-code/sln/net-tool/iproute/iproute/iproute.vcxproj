@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AAA67B0D-8C4B-4479-AFD9-BDBB8817B9C8}</ProjectGuid>
+    <RootNamespace>iproute</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\.gitignore" />
+    <None Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ifcfg" />
+    <None Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\Makefile" />
+    <None Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\routef" />
+    <None Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\routel" />
+    <None Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\rtpr" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ip.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ip6tunnel.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipaddress.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipaddrlabel.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipfou.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipila.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipl2tp.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_bond.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_bond_slave.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_bridge.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_bridge_slave.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_can.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_geneve.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_hsr.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_ipoib.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_ipvlan.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_macvlan.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_vlan.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_vrf.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iplink_vxlan.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipmacsec.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipmaddr.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipmonitor.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipmroute.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipneigh.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipnetconf.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipnetns.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipntable.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipprefix.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iproute.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iproute_lwtunnel.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iprule.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iptoken.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iptunnel.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iptuntap.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ipxfrm.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\link_gre.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\link_gre6.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\link_ip6tnl.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\link_iptnl.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\link_veth.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\link_vti.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\link_vti6.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\rtmon.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\rtm_map.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\static-syms.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\tcp_metrics.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\tunnel.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\xfrm_monitor.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\xfrm_policy.c" />
+    <ClCompile Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\xfrm_state.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\iproute_lwtunnel.h" />
+    <ClInclude Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\ip_common.h" />
+    <ClInclude Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\tunnel.h" />
+    <ClInclude Include="..\..\..\..\..\..\iproute2-4.9.0\iproute2-4.9.0\ip\xfrm.h" />
+    <ClInclude Include="ipaddr.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

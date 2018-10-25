@@ -1,0 +1,1 @@
+gcc -o test test.c libnet-tools.a libcel.a -lpthread
