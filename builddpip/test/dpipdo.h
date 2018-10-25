@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-struct dpip_route {
+struct _RouteInfo {
 	char			id[64];
 	char			 dst[32];    /* all-zero for default */
 	char			 gateway_addr[32];
