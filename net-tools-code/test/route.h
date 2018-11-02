@@ -4,7 +4,7 @@
 #define ACTION_ADD			1
 #define ACTION_DEL			2
 #define ERRBUF_SIZE			128
-struct _RouteInfo {
+typedef struct _RouteInfo {
 	char		id[64];
 	char		dst[32];    /* all-zero for default */
 	char		gateway_addr[32];
@@ -13,7 +13,7 @@ struct _RouteInfo {
 	char		netmask[32];
 	char		flags[8];
 	unsigned char   metric;
-};
+}RouteInfo;
 
 #ifdef __cplusplus
 extern "C" {

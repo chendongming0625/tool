@@ -112,6 +112,16 @@
 /*return ≥…π¶:0, ß∞‹:∑«¡„*/
 int rget_fib(int ext, int numeric, CelArrayList*routes_list);
 
+static void free_fun(void * p)
+{
+	if (p)
+	{
+		free(p);
+		p = NULL;
+	}
+	return;
+}
+
 CelArrayList *get_route_info()
 {
 	int opt_n = 0;     // numerical output FLAG_NUM | FLAG_SYM
@@ -132,7 +142,7 @@ CelArrayList *get_route_info()
 	int ext = options & FLAG_EXT;
 	int numeric = options & (FLAG_NUM_HOST | FLAG_SYM);
 
-	CelArrayList *list = cel_arraylist_new(NULL);
+	CelArrayList *list = cel_arraylist_new(free_fun);
 	if (options & FLAG_FIB)
 	{
 		if (!rget_fib(ext, numeric, list))

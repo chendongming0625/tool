@@ -2,6 +2,7 @@
 #include "arraylist.h"
 #include "ifconfig.h"
 #include "route.h"
+#include "test.h"
 
 
  int arraylist_print_interface(void *value, void *user_data)
@@ -61,4 +62,18 @@ int main(int argc,char **argv)
 	route_add();
 	test_route();
 	return 0;
+}
+
+CRouteManage::~CRouteManage()
+{
+}
+
+CRouteManage * CRouteManage::get_manager()
+{
+	static CRouteManage manager;
+	return &manager;
+}
+
+CRouteManage::CRouteManage()
+{
 }
